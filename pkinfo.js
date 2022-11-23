@@ -1,9 +1,1 @@
-import path from 'path';
-import {fileURLToPath} from 'url';
-import fs from "fs";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export const pkInfo = JSON.parse(fs.readFileSync(`${__dirname}/package.json`, 'utf8'));
-export const _PARSER_SIG = `${pkInfo.name}@${pkInfo.version} [${pkInfo.homepage}]`;
+export const _PARSER_SIG = `pdf2json-browser@"3.0.1" [https://github.com/modesty/pdf2json]`;
