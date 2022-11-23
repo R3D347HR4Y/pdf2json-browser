@@ -1,9 +1,9 @@
-import nodeUtil from "util";
-import { EventEmitter } from "events";
+import { kColors, kFontFaces, kFontStyles } from "./lib/pdfconst.js";
 
+import { EventEmitter } from "events";
 import PDFJS from "./lib/pdf.js";
 import { ParserStream } from "./lib/parserstream.js";
-import { kColors, kFontFaces, kFontStyles } from "./lib/pdfconst.js";
+import nodeUtil from "util";
 
 export default class PDFParser extends EventEmitter {
   // inherit from event emitter
@@ -43,7 +43,6 @@ export default class PDFParser extends EventEmitter {
     this.#pdfFilePath = null; //current PDF file to load and parse, null means loading/parsing not started
     this.#pdfFileMTime = null; // last time the current pdf was modified, used to recognize changes and ignore cache
     this.#data = null; //if file read success, data is PDF content; if failed, data is "err" object
-    this.#processFieldInfoXML = false; //disable additional _fieldInfo.xml parsing and merging (do NOT set to true)
 
     this.#PDFJS = new PDFJS(needRawText);
     this.#password = password;
@@ -139,7 +138,6 @@ export default class PDFParser extends EventEmitter {
     this.#pdfFilePath = null;
     this.#pdfFileMTime = null;
     this.#data = null;
-    this.#processFieldInfoXML = false; //disable additional _fieldInfo.xml parsing and merging (do NOT set to true)
 
     this.#PDFJS.destroy();
     this.#PDFJS = null;
