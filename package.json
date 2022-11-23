@@ -1,6 +1,6 @@
 {
   "name": "pdf2json-browser",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "PDF file parser that converts PDF binaries to a JSON string in browser",
   "keywords": [
     "pdf",
