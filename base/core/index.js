@@ -1,3 +1,6 @@
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
 const bidi = require("./bidi");
 const charsets = require("./charsets");
 const chunkedStream = require("./chunked_stream");

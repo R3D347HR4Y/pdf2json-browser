@@ -1,3 +1,6 @@
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
 const annotation = require("./annotation");
 const cffStandardStrings = require("./cffStandardStrings");
 const colorspace = require("./colorspace");
